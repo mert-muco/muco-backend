@@ -147,7 +147,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+    "https://muco-frontend-production.up.railway.app",
 ]
 
 REST_FRAMEWORK = {
