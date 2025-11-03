@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://muco-backend-production.up.railway.app/']
+ALLOWED_HOSTS = ['muco-backend-production.up.railway.app']
 
 
 # Application definition
