@@ -18,4 +18,4 @@ class Brief(models.Model):
 
 class BriefImage(models.Model):
     brief = models.ForeignKey(Brief, on_delete=models.CASCADE, related_name='images')
-    image = models.ImageField(upload_to=UploadByFieldCount('brief'))
+    image = models.ImageField()

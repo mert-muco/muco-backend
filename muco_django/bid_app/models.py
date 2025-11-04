@@ -10,7 +10,7 @@ class Bid(models.Model):
     id = models.UUIDField(default=uuid4, primary_key=True, editable=False)
     brief = models.ForeignKey(Brief, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    video = models.FileField(upload_to=UploadByFieldCount('brief'))
+    video = models.FileField()
     vision = models.CharField(max_length=700)
     asked_budget = models.DecimalField(max_digits=12, decimal_places=2)
     ai_score = models.PositiveSmallIntegerField(blank=True, null=True)

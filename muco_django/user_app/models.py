@@ -24,7 +24,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     id = models.UUIDField(default=uuid4, primary_key=True, editable=False)
     email = models.EmailField(unique=True)
     name = models.CharField(max_length=200, blank=True, null=True)
-    logo = models.ImageField(upload_to=UploadByField('name'), blank=True, null=True)
+    logo = models.ImageField(blank=True, null=True)
     ACCOUNT_TYPES = [('br', 'Brand'), ('usr', 'User')]
     account_type = models.CharField(choices=ACCOUNT_TYPES, default='usr')
     is_active = models.BooleanField(default=True)
