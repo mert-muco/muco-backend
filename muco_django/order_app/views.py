@@ -1,4 +1,3 @@
-import stripe
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
@@ -9,27 +8,27 @@ from django.db.models import Q
 
 
 
-class StripeCheckoutView(APIView):
-    permission_classes = [IsAuthenticated]
-    authentication_classes = [JWTAuthentication]
-    def post(self, request):
-        amount = int(float(request.data['amount']) * 100)
-        bid = request.data['bid_name']
-        session = stripe.checkout.Session.create(
-            payment_method_types=['card'],
-            mode='payment',
-            line_items=[{
-                'price_data': {
-                    'currency': 'usd',
-                    'product_data': {'name': bid},
-                    'unit_amount': amount
-                },
-                'quantity': 1
-            }],
-            success_url='http://localhost:5173/success',
-            cancel_url='http://localhost:5173/cancel'
-        )
-        return Response({'url': session.url})
+# class StripeCheckoutView(APIView):
+#     permission_classes = [IsAuthenticated]
+#     authentication_classes = [JWTAuthentication]
+#     def post(self, request):
+#         amount = int(float(request.data['amount']) * 100)
+#         bid = request.data['bid_name']
+#         session = stripe.checkout.Session.create(
+#             payment_method_types=['card'],
+#             mode='payment',
+#             line_items=[{
+#                 'price_data': {
+#                     'currency': 'usd',
+#                     'product_data': {'name': bid},
+#                     'unit_amount': amount
+#                 },
+#                 'quantity': 1
+#             }],
+#             success_url='http://localhost:5173/success',
+#             cancel_url='http://localhost:5173/cancel'
+#         )
+#         return Response({'url': session.url})
     
 class OrderView(APIView):
     permission_classes = [IsAuthenticated]
