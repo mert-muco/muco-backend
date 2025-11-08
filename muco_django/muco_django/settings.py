@@ -157,6 +157,11 @@ CORS_ALLOWED_ORIGINS = [
     "https://muco-frontend-production.up.railway.app",
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://muco-backend-production.up.railway.app",
+]
+
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
