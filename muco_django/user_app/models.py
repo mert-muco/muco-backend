@@ -36,4 +36,4 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = []
 
     def __str__(self):
-        return self.name
+        return self.name if self.name else '-'
