@@ -30,12 +30,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "www.mucoai.com",
     "mucoai.com",
-    "nu5abukl.up.railway.app",
+    'muco-backend-production.up.railway.app',
 ]
 
 
@@ -181,7 +181,6 @@ SIMPLE_JWT = {
 
 
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOW_CREDENTIALS = True
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-#afdsadf
