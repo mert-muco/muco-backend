@@ -35,7 +35,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "www.mucoai.com",
     "mucoai.com",
-    'muco-backend-production.up.railway.app',
+    "muco-backend-production.up.railway.app",
 ]
 
 
